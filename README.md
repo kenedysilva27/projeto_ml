@@ -1,23 +1,23 @@
-Predição de Transações
+# Predição de Transações
 Projeto de Machine Learning para prever se um cliente realizará uma transação, com base em 200 variáveis numéricas. A solução inclui pipeline de treinamento, geração de features, seleção de modelo, API de predição e testes automatizados.
 
-Instalação
+## Instalação
 
 pip install -r requirements.txt
 
-Treinamento
+## Treinamento
 
 python train.py
 
 O modelo treinado será salvo na pasta models/
 
-Executando a API
+## Executando a API
 
 uvicorn api:app --reload ou python api.py
 
 Acesso a documentação em: http://localhost:8000/docs
 
-Endpoints
+## Endpoints
 
 GET /health – Verifica se o modelo está carregado
 
@@ -33,7 +33,7 @@ data = {f"var_{i}": 0.1 for i in range(200)}
 res = requests.post("http://localhost:8000/predict", json=data)
 print(res.json())
 
-Features criadas
+## Features criadas
 
 A partir das 200 variáveis originais, são geradas 8 novas features estatísticas:
 
@@ -41,7 +41,7 @@ Média, desvio padrão, mínimo, máximo
 
 Contagem e proporção de valores positivos e negativos
 
-Algoritmos testados
+## Algoritmos testados
 
 Logistic Regression
 
@@ -51,7 +51,7 @@ LightGBM
 
 O melhor modelo é selecionado automaticamente com base no AUC-ROC.
 
-Testes
+## Testes
 
 Execute todos os testes com:
 
@@ -65,7 +65,7 @@ Integração (pipeline completo)
 
 API (validação dos endpoints)
 
-Docker
+## Docker
 
 O projeto pode ser containerizado com Docker.
 
@@ -99,12 +99,12 @@ data/
 models/
 tests/
 
-Como usar
+## Como usar
 
 docker build -t imagem-ml .
 docker run -p 8000:8000 imagem-ml
 
-Estrutura do Projeto
+## Estrutura do Projeto
 
 projeto_ml/
 ├── api.py
