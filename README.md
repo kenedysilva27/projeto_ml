@@ -3,7 +3,7 @@ Projeto de Machine Learning para prever se um cliente realizará uma transação
 
 ## Instalação
 
-pip install -r requirements.txt
+'''pip install -r requirements.txt'''
 
 ## Treinamento
 
